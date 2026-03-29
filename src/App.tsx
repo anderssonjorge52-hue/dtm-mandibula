@@ -84,6 +84,7 @@ export default function App() {
   const formattedDate = today.toLocaleDateString('pt-BR', {
     day: '2-digit',
     month: 'long',
+    year: 'numeric'
   });
 
   return (
@@ -91,7 +92,7 @@ export default function App() {
       {/* Top Bar */}
       <div className="bg-brand-ink py-2 px-4 text-center">
         <p className="text-white text-xs md:text-sm font-medium tracking-wide uppercase">
-          🔥 Oferta limitada até {formattedDate}
+          Oferta especial disponível apenas hoje - {formattedDate}
         </p>
       </div>
 
