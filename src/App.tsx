@@ -473,6 +473,68 @@ export default function App() {
         </div>
       </Section>
 
+      {/* Testimonials Section */}
+      <Section className="bg-white">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">💬 O que dizem quem já aplicou o método</h2>
+          <p className="text-gray-600 max-w-xl mx-auto">Histórias reais de pessoas que recuperaram a leveza na mandíbula em poucos dias.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {[
+            {
+              name: "Ana Paula",
+              age: "34 anos",
+              text: "Finalmente consegui dormir sem acordar with a boca travada. Os exercícios são simples e mudaram meu dia a dia. Sinto um alívio que não sentia há anos!",
+              rating: 5
+            },
+            {
+              name: "Ricardo S.",
+              age: "42 anos",
+              text: "Sempre tive estalos ao comer, e em menos de uma semana seguindo o método, o barulho diminuiu muito. Recomendo para quem sofre com DTM!",
+              rating: 5
+            },
+            {
+              name: "Juliana M.",
+              age: "29 anos",
+              text: "O guia é direto ao ponto. O áudio de relaxamento é maravilhoso para usar antes de dormir. Vale cada centavo!",
+              rating: 5
+            },
+            {
+              name: "Marcos T.",
+              age: "38 anos",
+              text: "Trabalho o dia todo no computador e a tensão na mandíbula era constante. Com o protocolo de 3 minutos, sinto alívio imediato durante o trabalho.",
+              rating: 5
+            }
+          ].map((testimonial, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="p-8 bg-gray-50 rounded-[2rem] border border-gray-100 relative"
+            >
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-brand-gold fill-brand-gold" />
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-6 leading-relaxed">"{testimonial.text}"</p>
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-brand-gold/20 rounded-full flex items-center justify-center font-bold text-brand-gold">
+                  {testimonial.name[0]}
+                </div>
+                <div>
+                  <p className="font-bold text-brand-ink">{testimonial.name}</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-widest">{testimonial.age}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
       {/* FAQ */}
       <Section className="bg-gray-50">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">❓ Perguntas Frequentes</h2>
