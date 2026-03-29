@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   CheckCircle2, 
@@ -75,23 +75,26 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
 // --- Main App ---
 
 export default function App() {
-  const [showStickyCta, setShowStickyCta] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowStickyCta(window.scrollY > 600);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const scrollToOffer = () => {
     const element = document.getElementById('offer');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: 'long',
+  });
+
   return (
     <div className="min-h-screen selection:bg-brand-secondary selection:text-white">
+      {/* Top Bar */}
+      <div className="bg-brand-ink py-2 px-4 text-center">
+        <p className="text-white text-xs md:text-sm font-medium tracking-wide uppercase">
+          🔥 Oferta limitada até {formattedDate}
+        </p>
+      </div>
+
       {/* Hero Section */}
       <header className="relative bg-white pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
@@ -458,13 +461,15 @@ export default function App() {
 
         {/* Guarantee */}
         <div className="mt-12 flex flex-col items-center">
-          <div className="w-24 h-24 mb-4">
-            <img 
-              src="https://picsum.photos/seed/guarantee/200/200" 
-              alt="Garantia de 7 dias" 
-              className="rounded-full border-4 border-brand-secondary/20"
-              referrerPolicy="no-referrer"
-            />
+          <div className="w-28 h-28 mb-6 relative flex items-center justify-center">
+            <div className="absolute inset-0 bg-brand-gold/10 rounded-full animate-pulse" />
+            <div className="w-24 h-24 bg-brand-gold/20 rounded-full border-4 border-brand-gold/30 flex flex-col items-center justify-center relative z-10">
+              <span className="text-3xl font-black text-brand-gold leading-none">7</span>
+              <span className="text-[10px] font-bold text-brand-gold uppercase tracking-tighter">DIAS</span>
+            </div>
+            <div className="absolute -bottom-1 bg-brand-gold text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest z-20 shadow-lg">
+              Garantia
+            </div>
           </div>
           <h3 className="text-xl font-bold mb-2">Garantia Incondicional de 7 Dias</h3>
           <p className="text-gray-600 max-w-md italic">
@@ -569,22 +574,6 @@ export default function App() {
           </p>
         </div>
       </footer>
-
-      {/* Sticky Mobile CTA */}
-      <AnimatePresence>
-        {showStickyCta && (
-          <motion.div 
-            initial={{ y: 100 }}
-            animate={{ y: 0 }}
-            exit={{ y: 100 }}
-            className="fixed bottom-0 left-0 w-full p-4 bg-white border-t border-gray-100 z-50 md:hidden shadow-[0_-10px_30px_rgba(0,0,0,0.1)]"
-          >
-            <Button onClick={scrollToOffer} className="w-full py-3 text-base">
-              COMEÇAR AGORA (R$19)
-            </Button>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
