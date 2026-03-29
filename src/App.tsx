@@ -491,7 +491,7 @@ export default function App() {
             {
               name: "Ana Paula",
               age: "34 anos",
-              text: "Finalmente consegui dormir sem acordar with a boca travada. Os exercícios são simples e mudaram meu dia a dia. Sinto um alívio que não sentia há anos!",
+              text: "Finalmente consegui dormir sem acordar com a boca travada. Os exercícios são simples e mudaram meu dia a dia. Sinto um alívio que não sentia há anos!",
               rating: 5
             },
             {
