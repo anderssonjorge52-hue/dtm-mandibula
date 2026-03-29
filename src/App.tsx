@@ -114,6 +114,21 @@ export default function App() {
             <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-10 font-light italic">
               Descubra como reduzir a tensão, os estalos e o desconforto da mandíbula com uma rotina simples de poucos minutos por dia.
             </p>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="mb-10 max-w-md mx-auto"
+            >
+              <img 
+                src="https://i.ibb.co/SXr4VsyW/M-todo-Mand-bula-Leve-Guia-Completo.png" 
+                alt="Método Mandíbula Leve Guia Completo" 
+                className="w-full h-auto drop-shadow-2xl"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+
             <Button onClick={scrollToOffer} className="w-full md:w-auto bg-brand-gold hover:bg-opacity-90">
               COMEÇAR AGORA E ALIVIAR MINHA MANDÍBULA
             </Button>
@@ -296,20 +311,44 @@ export default function App() {
       {/* What you get */}
       <Section className="bg-gray-50">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">🧩 O que você vai receber hoje</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            "eBook completo",
-            "Acesso ao programa de 7 dias",
-            "Exercícios guiados",
-            "Sistema de progresso",
-            "Acesso imediato",
-            "Suporte exclusivo"
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-brand-primary" />
-              <span className="font-medium">{item}</span>
+        
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-2 lg:order-1"
+          >
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                "eBook completo",
+                "Acesso ao programa de 7 dias",
+                "Exercícios guiados",
+                "Sistema de progresso",
+                "Acesso imediato",
+                "Suporte exclusivo"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                  <CheckCircle2 className="w-5 h-5 text-brand-gold" />
+                  <span className="font-medium">{item}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-1 lg:order-2"
+          >
+            <img 
+              src="https://i.ibb.co/SXr4VsyW/M-todo-Mand-bula-Leve-Guia-Completo.png" 
+              alt="Método Mandíbula Leve Guia Completo" 
+              className="w-full h-auto drop-shadow-2xl rounded-3xl"
+              referrerPolicy="no-referrer"
+            />
+          </motion.div>
         </div>
 
         {/* Bonus */}
