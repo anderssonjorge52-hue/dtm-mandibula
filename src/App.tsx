@@ -179,24 +179,28 @@ export default function App() {
       {/* Agitation Section */}
       <Section className="bg-brand-ink text-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">⚠️ Essa tensão acumulada pode:</h2>
-          <ul className="space-y-6 mb-12">
+          <h2 className="text-2xl md:text-4xl font-bold mb-10 text-center flex flex-col md:flex-row items-center justify-center gap-2">
+            <span className="text-3xl">⚠️</span> Essa tensão acumulada pode:
+          </h2>
+          <ul className="space-y-8 mb-12">
             {[
-              "piorar com o tempo",
-              "causar dores de cabeça frequentes",
-              "afetar sua fala",
-              "aumentar o desconforto no dia a dia"
+              "Se tornar uma dor crônica e constante",
+              "Gerar dores de cabeça e enxaquecas frequentes",
+              "Dificultar sua fala e mastigação no dia a dia",
+              "Aumentar o estresse e o cansaço facial"
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-4 text-lg md:text-xl opacity-90">
-                <div className="w-2 h-2 bg-brand-secondary rounded-full" />
-                {item}
+              <li key={i} className="flex items-start gap-4 text-lg md:text-xl opacity-90">
+                <div className="w-2 h-2 bg-brand-secondary rounded-full mt-2.5 flex-shrink-0" />
+                <span className="leading-tight">{item}</span>
               </li>
             ))}
           </ul>
           <div className="p-8 bg-white/5 rounded-3xl border border-white/10 text-center">
-            <p className="text-2xl font-serif italic mb-4">"E quanto mais você ignora... mais difícil fica aliviar depois."</p>
-            <p className="text-brand-secondary font-bold text-xl uppercase tracking-widest">A boa notícia é:</p>
-            <p className="text-xl mt-2">Existe uma forma simples de aliviar essa tensão sem depender de tratamentos complicados.</p>
+            <p className="text-xl md:text-2xl font-serif italic mb-6 leading-relaxed">
+              "E quanto mais você ignora... mais difícil fica aliviar depois."
+            </p>
+            <p className="text-brand-secondary font-bold text-lg md:text-xl uppercase tracking-widest mb-2">A boa notícia é:</p>
+            <p className="text-lg md:text-xl leading-relaxed">Existe uma forma simples de aliviar essa tensão sem depender de tratamentos complicados.</p>
           </div>
         </div>
       </Section>
