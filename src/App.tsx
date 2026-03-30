@@ -387,99 +387,198 @@ export default function App() {
       </Section>
 
       {/* Offer Section */}
-      <Section id="offer" className="text-center px-4">
-        <div className="max-w-xl mx-auto bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-100 relative overflow-hidden">
-          {/* Top Banner */}
-          <div className="bg-brand-ink text-white py-4 px-6">
-            <p className="text-xs font-bold tracking-[0.2em] uppercase opacity-70 mb-1">Oferta Exclusiva</p>
-            <h2 className="text-2xl font-bold">Método Mandíbula Leve</h2>
+      <Section id="offer" className="px-4 py-24 bg-gray-50 relative overflow-hidden">
+        {/* Background Accents */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
+          <div className="absolute top-1/4 left-0 w-96 h-96 bg-brand-gold/5 blur-[120px] rounded-full" />
+          <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-brand-secondary/5 blur-[120px] rounded-full" />
+        </div>
+
+        <div className="max-w-5xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-gold/10 rounded-full mb-4 border border-brand-gold/20">
+              <Star className="w-4 h-4 text-brand-gold fill-brand-gold" />
+              <span className="text-xs font-black text-brand-gold uppercase tracking-[0.2em]">Junte-se a +1.247 pessoas transformadas</span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">Sua Nova Vida Começa <span className="text-brand-gold">Hoje</span></h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl">
+              Não deixe para amanhã o alívio que você pode ter em poucos minutos.
+            </p>
           </div>
 
-          <div className="p-8 md:p-12">
-            {/* Price Tag */}
-            <div className="mb-10 relative inline-block">
-              <div className="absolute -top-6 -right-12 bg-red-500 text-white text-[10px] font-black px-3 py-1 rounded-full shadow-lg animate-bounce">
-                60% OFF
-              </div>
-              <p className="text-gray-400 line-through text-xl mb-1">De R$47</p>
-              <div className="flex items-baseline justify-center gap-1">
-                <span className="text-2xl font-bold text-brand-ink">R$</span>
-                <span className="text-6xl md:text-7xl font-black text-brand-ink tracking-tighter">19</span>
-              </div>
-              <p className="text-brand-gold font-bold text-sm mt-2">PAGAMENTO ÚNICO</p>
+          <div className="bg-brand-ink rounded-[3.5rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)] border border-white/10 relative">
+            {/* Top Ribbon */}
+            <div className="absolute top-12 -right-12 bg-brand-gold text-brand-ink px-12 py-2 font-black text-xs uppercase tracking-[0.2em] transform rotate-45 z-20 shadow-xl">
+              Mais Vendido
             </div>
 
-            {/* Value List */}
-            <div className="space-y-4 mb-10 text-left bg-gray-50 p-6 rounded-2xl border border-gray-100">
-              {[
-                "eBook Completo (Guia de Alívio)",
-                "Programa de 7 Dias de Exercícios",
-                "Áudio de Relaxamento Profundo",
-                "Protocolo de Alívio Rápido (3 min)",
-                "Acesso Vitalício e Imediato"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="bg-brand-gold/20 p-1 rounded-full">
-                    <CheckCircle2 className="w-4 h-4 text-brand-gold" />
-                  </div>
-                  <span className="text-sm font-medium text-gray-700">{item}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Button */}
-            <div className="space-y-4">
-              <Button 
-                onClick={() => alert('Redirecionando para checkout...')} 
-                pulse 
-                className="w-full py-5 text-xl shadow-[0_10px_30px_rgba(197,160,89,0.3)]"
-              >
-                QUERO MEU ACESSO AGORA
-              </Button>
-              <p className="text-xs text-gray-400 flex items-center justify-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-green-500" /> 
-                Ambiente seguro e criptografado
+            {/* Urgency Bar */}
+            <div className="bg-brand-gold py-3 px-4 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-white/20 animate-[pulse_2s_infinite]" />
+              <p className="relative text-brand-ink text-[10px] md:text-xs font-black uppercase tracking-[0.3em]">
+                ⚠️ ÚLTIMAS VAGAS: O preço subirá para R$ 97,00 em breve
               </p>
             </div>
 
-            {/* Trust Badges */}
-            <div className="mt-10 pt-8 border-t border-gray-100 grid grid-cols-2 sm:flex items-center justify-between gap-4">
-              <div className="flex flex-col items-center gap-1 opacity-50 grayscale hover:grayscale-0 transition-all cursor-default">
-                <Smartphone className="w-5 h-5" />
-                <span className="text-[9px] uppercase font-black tracking-widest">Acesso Mobile</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 opacity-50 grayscale hover:grayscale-0 transition-all cursor-default">
-                <Zap className="w-5 h-5" />
-                <span className="text-[9px] uppercase font-black tracking-widest">Entrega Imediata</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 opacity-50 grayscale hover:grayscale-0 transition-all cursor-default">
-                <ShieldCheck className="w-5 h-5" />
-                <span className="text-[9px] uppercase font-black tracking-widest">Compra Segura</span>
-              </div>
-              <div className="flex flex-col items-center gap-1 opacity-50 grayscale hover:grayscale-0 transition-all cursor-default">
-                <Clock className="w-5 h-5" />
-                <span className="text-[9px] uppercase font-black tracking-widest">Acesso Vitalício</span>
-              </div>
-            </div>
-          </div>
-        </div>
+            <div className="flex flex-col lg:flex-row">
+              {/* Left: Content & Value */}
+              <div className="flex-1 p-8 md:p-16 border-b lg:border-b-0 lg:border-r border-white/10">
+                <div className="mb-10">
+                  <h3 className="text-2xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                    O que você vai <span className="text-brand-gold underline decoration-brand-gold/30 underline-offset-8">receber:</span>
+                  </h3>
+                  <p className="text-gray-400 text-sm md:text-base">Acesso imediato a todo o ecossistema de alívio Mandíbula Leve.</p>
+                </div>
 
-        {/* Guarantee */}
-        <div className="mt-12 flex flex-col items-center">
-          <div className="w-28 h-28 mb-6 relative flex items-center justify-center">
-            <div className="absolute inset-0 bg-brand-gold/10 rounded-full animate-pulse" />
-            <div className="w-24 h-24 bg-brand-gold/20 rounded-full border-4 border-brand-gold/30 flex flex-col items-center justify-center relative z-10">
-              <span className="text-3xl font-black text-brand-gold leading-none">7</span>
-              <span className="text-[10px] font-bold text-brand-gold uppercase tracking-tighter">DIAS</span>
+                <div className="grid sm:grid-cols-2 gap-8 mb-12">
+                  {[
+                    { text: "eBook Mandíbula Leve", desc: "O guia mestre de alívio", icon: <BookOpen className="w-5 h-5" /> },
+                    { text: "Vídeo-Aulas Práticas", desc: "Execução perfeita", icon: <Play className="w-5 h-5" /> },
+                    { text: "Áudio Anti-Bruxismo", desc: "Sono profundo e reparador", icon: <Volume2 className="w-5 h-5" /> },
+                    { text: "Checklist de Hábitos", desc: "Sua rotina blindada", icon: <CheckCircle2 className="w-5 h-5" /> }
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-4 group">
+                      <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-ink transition-all shadow-lg">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <p className="text-white font-bold text-base">{item.text}</p>
+                        <p className="text-gray-500 text-xs">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="p-8 bg-gradient-to-br from-brand-gold/20 to-transparent rounded-3xl border border-brand-gold/30 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Zap size={80} />
+                  </div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="bg-brand-gold text-brand-ink p-1.5 rounded-lg">
+                      <Zap className="w-4 h-4 fill-brand-ink" />
+                    </div>
+                    <span className="text-brand-gold font-black text-xs uppercase tracking-[0.2em]">Bônus de Ação Rápida</span>
+                  </div>
+                  <h4 className="text-white font-bold text-lg mb-2">Protocolo SOS Alívio em 3 Minutos</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                    A técnica secreta usada por especialistas para destravar a mandíbula instantaneamente em momentos de crise.
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-500 line-through text-sm">Valor: R$ 47,00</span>
+                    <span className="text-green-400 font-black text-sm uppercase tracking-widest">Hoje: GRÁTIS</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right: Pricing & Action */}
+              <div className="w-full lg:w-[450px] p-8 md:p-16 bg-gradient-to-b from-white/[0.05] to-transparent flex flex-col justify-center items-center relative">
+                {/* Social Proof Bubble */}
+                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-white text-brand-ink px-4 py-2 rounded-2xl shadow-2xl border border-gray-200 flex items-center gap-2 whitespace-nowrap">
+                  <div className="flex -space-x-2">
+                    {[1,2,3].map(i => (
+                      <img key={i} src={`https://i.pravatar.cc/100?u=${i}`} className="w-6 h-6 rounded-full border-2 border-white" alt="User" referrerPolicy="no-referrer" />
+                    ))}
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-tighter">98% de satisfação dos alunos</span>
+                </div>
+
+                <div className="text-center mb-12">
+                  <p className="text-gray-500 line-through text-2xl mb-2 font-medium">De R$ 97,00</p>
+                  <div className="flex items-start justify-center">
+                    <span className="text-3xl font-bold text-white/40 mt-3 mr-1">R$</span>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[10rem] md:text-[12rem] font-black text-white tracking-tighter leading-[0.8]">29</span>
+                      <div className="flex items-center gap-3 -mt-4">
+                        <span className="text-4xl font-bold text-white/60">,90</span>
+                        <div className="px-3 py-1 bg-green-500 text-white text-xs font-black rounded-full uppercase tracking-widest shadow-lg shadow-green-500/20">
+                          70% OFF
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-brand-gold font-black text-xs mt-8 tracking-[0.4em] uppercase">Pagamento Único • Sem Taxas</p>
+                </div>
+
+                <div className="w-full space-y-8">
+                  <div className="relative group">
+                    <div className="absolute -inset-1 bg-brand-gold rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <Button 
+                      onClick={() => alert('Redirecionando para checkout seguro...')} 
+                      pulse 
+                      className="relative w-full py-8 text-2xl font-black shadow-2xl transform transition-all hover:scale-[1.03] active:scale-[0.97]"
+                    >
+                      QUERO MEU ACESSO AGORA
+                    </Button>
+                  </div>
+                  
+                  <div className="space-y-6">
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 rounded-xl border border-white/10">
+                        <ShieldCheck className="w-5 h-5 text-green-500" />
+                        <span className="text-[11px] text-gray-300 uppercase font-black tracking-[0.15em]">Ambiente 100% Seguro</span>
+                      </div>
+                      <div className="flex gap-6 opacity-60 hover:opacity-100 transition-all duration-500">
+                        <img src="https://picsum.photos/seed/visa/40/25" alt="Visa" className="h-5" referrerPolicy="no-referrer" />
+                        <img src="https://picsum.photos/seed/master/40/25" alt="Mastercard" className="h-5" referrerPolicy="no-referrer" />
+                        <img src="https://picsum.photos/seed/pix/40/25" alt="Pix" className="h-5" referrerPolicy="no-referrer" />
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-500 text-[10px] text-center uppercase font-bold tracking-widest leading-relaxed">
+                      Seu acesso será enviado imediatamente <br /> para o seu e-mail após a confirmação.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="absolute -bottom-1 bg-brand-gold text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest z-20 shadow-lg">
-              Garantia
+
+            {/* Trust Footer */}
+            <div className="bg-black/60 border-t border-white/10 py-10 px-8">
+              <div className="flex flex-wrap justify-center gap-x-16 gap-y-8">
+                {[
+                  { icon: <Smartphone size={20} />, text: "Acesso Mobile" },
+                  { icon: <Zap size={20} />, text: "Entrega Imediata" },
+                  { icon: <ShieldCheck size={20} />, text: "Garantia Incondicional" },
+                  { icon: <Star size={20} />, text: "Suporte 24/7" }
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
+                    <span className="text-brand-gold">{item.icon}</span>
+                    <span className="text-xs font-black uppercase tracking-[0.25em]">{item.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-          <h3 className="text-xl font-bold mb-2">Garantia Incondicional de 7 Dias</h3>
-          <p className="text-gray-600 max-w-md italic">
-            "Se não gostar, é só pedir reembolso. Sem perguntas. O risco é todo meu."
-          </p>
+
+          {/* Guarantee Section */}
+          <div className="mt-20 bg-white rounded-[3rem] p-8 md:p-16 shadow-xl border border-gray-100 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full -mr-16 -mt-16" />
+            
+            <div className="relative flex-shrink-0">
+              <div className="w-40 h-40 bg-brand-gold/10 rounded-full flex items-center justify-center p-4">
+                <div className="w-full h-full bg-brand-gold/20 rounded-full border-4 border-brand-gold/30 flex flex-col items-center justify-center relative">
+                  <span className="text-5xl font-black text-brand-gold leading-none">7</span>
+                  <span className="text-xs font-bold text-brand-gold uppercase tracking-widest">DIAS</span>
+                </div>
+              </div>
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-brand-gold text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-[0.2em] shadow-2xl">
+                GARANTIA
+              </div>
+            </div>
+
+            <div className="flex-1">
+              <h3 className="text-3xl font-bold mb-4 text-brand-ink">Minha Garantia Blindada</h3>
+              <p className="text-gray-600 text-lg leading-relaxed italic mb-6">
+                "Eu confio tanto no Método Mandíbula Leve que eu tiro todo o risco das suas costas. Se em 7 dias você não sentir que sua mandíbula está mais solta e relaxada, eu te devolvo cada centavo. Sem perguntas, sem letras miúdas."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
+                  <ShieldCheck className="w-6 h-6 text-brand-gold" />
+                </div>
+                <p className="text-sm font-bold text-brand-ink uppercase tracking-widest">Sua satisfação ou seu dinheiro de volta</p>
+              </div>
+            </div>
+          </div>
         </div>
       </Section>
 
