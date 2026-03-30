@@ -199,7 +199,7 @@ export default function App() {
             <p className="text-xl md:text-2xl font-serif italic mb-6 leading-relaxed">
               "E quanto mais você ignora... mais difícil fica aliviar depois."
             </p>
-            <p className="text-brand-secondary font-bold text-lg md:text-xl uppercase tracking-widest mb-2">A boa notícia é:</p>
+            <p className="text-brand-secondary font-bold text-base md:text-xl uppercase tracking-wider mb-2">A boa notícia é:</p>
             <p className="text-lg md:text-xl leading-relaxed">Existe uma forma simples de aliviar essa tensão sem depender de tratamentos complicados.</p>
           </div>
         </div>
