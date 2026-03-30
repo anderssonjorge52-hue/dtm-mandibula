@@ -19,7 +19,7 @@ import {
 // --- Components ---
 
 const Section = ({ children, className = "", id }: { children: React.ReactNode, className?: string, id?: string }) => (
-  <section id={id} className={`py-16 px-6 md:py-24 ${className}`}>
+  <section id={id} className={`py-12 px-6 md:py-24 ${className}`}>
     <div className="max-w-4xl mx-auto">
       {children}
     </div>
@@ -32,7 +32,7 @@ const Button = ({ children, className = "", primary = true, onClick, pulse = fal
     animate={pulse ? { scale: [1, 1.02, 1] } : {}}
     transition={pulse ? { duration: 2, repeat: Infinity } : {}}
     className={`
-      px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg cursor-pointer
+      px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg cursor-pointer
       ${primary 
         ? 'bg-brand-gold text-white hover:bg-opacity-90 shadow-brand-gold/20' 
         : 'bg-white text-brand-primary border-2 border-brand-primary hover:bg-brand-primary hover:text-white'}
@@ -112,10 +112,10 @@ export default function App() {
             <span className="inline-block px-4 py-1.5 mb-6 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-semibold tracking-wide uppercase">
               Acesso Imediato
             </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-brand-ink">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-brand-ink">
               Método pouco conhecido para aliviar a <span className="text-brand-gold italic">dor na mandíbula</span> em até 7 dias
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-2xl mx-auto mb-10 font-light italic">
+            <p className="text-lg md:text-2xl text-gray-600 max-w-2xl mx-auto mb-10 font-light italic px-4">
               Descubra como reduzir a tensão, os estalos e o desconforto da mandíbula com uma rotina simples de poucos minutos por dia.
             </p>
             
@@ -146,7 +146,7 @@ export default function App() {
       {/* Pain Points Section */}
       <Section className="bg-gray-50">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Se você...</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Se você...</h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
           {[
@@ -207,10 +207,10 @@ export default function App() {
 
       {/* Solution Presentation */}
       <Section className="bg-white">
-        <div className="text-center mb-16">
-          <span className="text-brand-gold font-bold tracking-tighter text-xl mb-2 block">Apresentamos o:</span>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">Método Mandíbula Leve – 7 Dias</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-16 px-4">
+          <span className="text-brand-gold font-bold tracking-tighter text-lg md:text-xl mb-2 block uppercase">Apresentamos o:</span>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">Método Mandíbula Leve – 7 Dias</h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Um programa simples e guiado que te ajuda a recuperar a sensação de leveza com menos de 5 minutos por dia.
           </p>
         </div>
@@ -234,7 +234,7 @@ export default function App() {
 
       {/* How it Works */}
       <Section className="bg-brand-bg border-y border-gray-100">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">🧠 Como funciona o método</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center">🧠 Como funciona o método</h2>
         
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
@@ -287,9 +287,9 @@ export default function App() {
 
       {/* Differential */}
       <Section>
-        <div className="bg-brand-primary rounded-[3rem] p-12 text-white text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">⚡ Diferente de tudo que você já viu</h2>
-          <div className="grid md:grid-cols-2 gap-12 max-w-2xl mx-auto">
+        <div className="bg-brand-primary rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 text-white text-center">
+          <h2 className="text-2xl md:text-4xl font-bold mb-8">⚡ Diferente de tudo que você já viu</h2>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-2xl mx-auto">
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-red-300 font-medium">
                 <XCircle className="w-5 h-5" /> Nada complicado
@@ -318,7 +318,7 @@ export default function App() {
 
       {/* What you get */}
       <Section className="bg-gray-50">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">🧩 O que você vai receber hoje</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center">🧩 O que você vai receber hoje</h2>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
           <motion.div 
@@ -404,7 +404,7 @@ export default function App() {
               <p className="text-gray-400 line-through text-xl mb-1">De R$47</p>
               <div className="flex items-baseline justify-center gap-1">
                 <span className="text-2xl font-bold text-brand-ink">R$</span>
-                <span className="text-7xl font-black text-brand-ink tracking-tighter">19</span>
+                <span className="text-6xl md:text-7xl font-black text-brand-ink tracking-tighter">19</span>
               </div>
               <p className="text-brand-gold font-bold text-sm mt-2">PAGAMENTO ÚNICO</p>
             </div>
@@ -443,22 +443,22 @@ export default function App() {
             </div>
 
             {/* Trust Badges */}
-            <div className="mt-10 pt-8 border-t border-gray-100 flex items-center justify-between gap-2">
-              <div className="flex flex-col items-center gap-1 opacity-40 grayscale hover:grayscale-0 transition-all cursor-default">
+            <div className="mt-10 pt-8 border-t border-gray-100 grid grid-cols-2 sm:flex items-center justify-between gap-4">
+              <div className="flex flex-col items-center gap-1 opacity-50 grayscale hover:grayscale-0 transition-all cursor-default">
                 <Smartphone className="w-5 h-5" />
-                <span className="text-[8px] uppercase font-black tracking-widest">Mobile</span>
+                <span className="text-[9px] uppercase font-black tracking-widest">Acesso Mobile</span>
               </div>
-              <div className="flex flex-col items-center gap-1 opacity-40 grayscale hover:grayscale-0 transition-all cursor-default">
+              <div className="flex flex-col items-center gap-1 opacity-50 grayscale hover:grayscale-0 transition-all cursor-default">
                 <Zap className="w-5 h-5" />
-                <span className="text-[8px] uppercase font-black tracking-widest">Imediato</span>
+                <span className="text-[9px] uppercase font-black tracking-widest">Entrega Imediata</span>
               </div>
-              <div className="flex flex-col items-center gap-1 opacity-40 grayscale hover:grayscale-0 transition-all cursor-default">
+              <div className="flex flex-col items-center gap-1 opacity-50 grayscale hover:grayscale-0 transition-all cursor-default">
                 <ShieldCheck className="w-5 h-5" />
-                <span className="text-[8px] uppercase font-black tracking-widest">Seguro</span>
+                <span className="text-[9px] uppercase font-black tracking-widest">Compra Segura</span>
               </div>
-              <div className="flex flex-col items-center gap-1 opacity-40 grayscale hover:grayscale-0 transition-all cursor-default">
+              <div className="flex flex-col items-center gap-1 opacity-50 grayscale hover:grayscale-0 transition-all cursor-default">
                 <Clock className="w-5 h-5" />
-                <span className="text-[8px] uppercase font-black tracking-widest">Vitalício</span>
+                <span className="text-[9px] uppercase font-black tracking-widest">Acesso Vitalício</span>
               </div>
             </div>
           </div>
@@ -486,7 +486,7 @@ export default function App() {
       {/* Testimonials Section */}
       <Section className="bg-white">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">💬 O que dizem quem já aplicou o método</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">💬 O que dizem quem já aplicou o método</h2>
           <p className="text-gray-600 max-w-xl mx-auto">Histórias reais de pessoas que recuperaram a leveza na mandíbula em poucos dias.</p>
         </div>
 
@@ -547,7 +547,7 @@ export default function App() {
 
       {/* FAQ */}
       <Section className="bg-gray-50">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">❓ Perguntas Frequentes</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center">❓ Perguntas Frequentes</h2>
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
           <FAQItem 
             question="Funciona mesmo?" 
