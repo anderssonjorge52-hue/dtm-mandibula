@@ -503,7 +503,7 @@ export default function App() {
                   <div className="relative group">
                     <div className="absolute -inset-1 bg-brand-gold rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                     <Button 
-                      onClick={() => alert('Redirecionando para checkout seguro...')} 
+                      onClick={() => window.open('https://pay.cakto.com.br/3qxvx6z_822860', '_blank')} 
                       pulse 
                       className="relative w-full py-8 text-2xl font-black shadow-2xl transform transition-all hover:scale-[1.03] active:scale-[0.97]"
                     >
@@ -516,11 +516,6 @@ export default function App() {
                       <div className="flex items-center gap-2 px-5 py-2.5 bg-white/5 rounded-xl border border-white/10">
                         <ShieldCheck className="w-5 h-5 text-green-500" />
                         <span className="text-[11px] text-gray-300 uppercase font-black tracking-[0.15em]">Ambiente 100% Seguro</span>
-                      </div>
-                      <div className="flex gap-6 opacity-60 hover:opacity-100 transition-all duration-500">
-                        <img src="https://picsum.photos/seed/visa/40/25" alt="Visa" className="h-5" referrerPolicy="no-referrer" />
-                        <img src="https://picsum.photos/seed/master/40/25" alt="Mastercard" className="h-5" referrerPolicy="no-referrer" />
-                        <img src="https://picsum.photos/seed/pix/40/25" alt="Pix" className="h-5" referrerPolicy="no-referrer" />
                       </div>
                     </div>
                     
@@ -594,25 +589,25 @@ export default function App() {
             {
               name: "Ana Paula",
               age: "34 anos",
-              text: "Finalmente consegui dormir sem acordar com a boca travada. Os exercícios são simples e mudaram meu dia a dia. Sinto um alívio que não sentia há anos!",
+              text: "Eu sofria com bruxismo há anos e acordava todos os dias com dor de cabeça e a mandíbula travada. Depois de apenas 4 dias seguindo o Método Mandíbula Leve, a tensão sumiu. Pela primeira vez em muito tempo, acordei descansada e sem dor. É libertador!",
               rating: 5
             },
             {
               name: "Ricardo S.",
               age: "42 anos",
-              text: "Sempre tive estalos ao comer, e em menos de uma semana seguindo o método, o barulho diminuiu muito. Recomendo para quem sofre com DTM!",
+              text: "Os estalos na minha mandíbula eram tão altos que eu tinha vergonha de comer perto das pessoas. O guia é extremamente prático e os exercícios de 5 minutos realmente funcionam. Os estalos diminuíram 90% e a dor ao mastigar desapareceu. Recomendo demais!",
               rating: 5
             },
             {
               name: "Juliana M.",
               age: "29 anos",
-              text: "O guia é direto ao ponto. O áudio de relaxamento é maravilhoso para usar antes de dormir. Vale cada centavo!",
+              text: "O que mais me surpreendeu foi o Protocolo SOS. Eu trabalho sob muita pressão e sinto a mandíbula travar durante o dia. Aplicar a técnica de 3 minutos me dá um alívio imediato. O áudio de relaxamento também é incrível, durmo muito melhor agora.",
               rating: 5
             },
             {
               name: "Marcos T.",
               age: "38 anos",
-              text: "Trabalho o dia todo no computador e a tensão na mandíbula era constante. Com o protocolo de 3 minutos, sinto alívio imediato durante o trabalho.",
+              text: "Já tinha tentado de tudo, até placas caras, mas nada resolvia a causa da tensão. Esse método vai direto na raiz do problema. É simples, barato e muito eficiente. Minha qualidade de vida mudou completamente em uma semana.",
               rating: 5
             }
           ].map((testimonial, i) => (
