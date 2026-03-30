@@ -29,8 +29,8 @@ const Section = ({ children, className = "", id }: { children: React.ReactNode, 
 const Button = ({ children, className = "", primary = true, onClick, pulse = false }: { children: React.ReactNode, className?: string, primary?: boolean, onClick?: () => void, pulse?: boolean }) => (
   <motion.button 
     onClick={onClick}
-    animate={pulse ? { scale: [1, 1.02, 1] } : {}}
-    transition={pulse ? { duration: 2, repeat: Infinity } : {}}
+    animate={pulse ? { scale: [1, 1.05, 1] } : {}}
+    transition={pulse ? { duration: 1.5, repeat: Infinity, ease: "easeInOut" } : {}}
     className={`
       px-8 py-4 rounded-full font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg cursor-pointer
       ${primary 
@@ -133,7 +133,7 @@ export default function App() {
               />
             </motion.div>
 
-            <Button onClick={scrollToOffer} className="w-full md:w-auto bg-brand-gold hover:bg-opacity-90">
+            <Button onClick={scrollToOffer} pulse className="w-full md:w-auto bg-brand-gold hover:bg-opacity-90">
               COMEÇAR AGORA E ALIVIAR MINHA MANDÍBULA
             </Button>
             <p className="mt-4 text-sm text-gray-500 flex items-center justify-center gap-2">
@@ -199,7 +199,7 @@ export default function App() {
             <p className="text-xl md:text-2xl font-serif italic mb-6 leading-relaxed">
               "E quanto mais você ignora... mais difícil fica aliviar depois."
             </p>
-            <p className="text-brand-secondary font-bold text-base md:text-xl uppercase tracking-wider mb-2">A boa notícia é:</p>
+            <p className="text-brand-secondary font-bold text-sm sm:text-base md:text-xl uppercase tracking-tight sm:tracking-wider mb-2">A boa notícia é:</p>
             <p className="text-lg md:text-xl leading-relaxed">Existe uma forma simples de aliviar essa tensão sem depender de tratamentos complicados.</p>
           </div>
         </div>
@@ -291,25 +291,25 @@ export default function App() {
           <h2 className="text-2xl md:text-4xl font-bold mb-8">⚡ Diferente de tudo que você já viu</h2>
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-2xl mx-auto">
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-red-300 font-medium">
-                <XCircle className="w-5 h-5" /> Nada complicado
+              <div className="flex items-center gap-2 sm:gap-3 text-red-300 font-medium text-sm sm:text-base md:text-lg">
+                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Nada complicado
               </div>
-              <div className="flex items-center gap-3 text-red-300 font-medium">
-                <XCircle className="w-5 h-5" /> Nada demorado
+              <div className="flex items-center gap-2 sm:gap-3 text-red-300 font-medium text-sm sm:text-base md:text-lg">
+                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Nada demorado
               </div>
-              <div className="flex items-center gap-3 text-red-300 font-medium">
-                <XCircle className="w-5 h-5" /> Nada genérico
+              <div className="flex items-center gap-2 sm:gap-3 text-red-300 font-medium text-sm sm:text-base md:text-lg">
+                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Nada genérico
               </div>
             </div>
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-green-300 font-bold">
-                <CheckCircle2 className="w-5 h-5" /> Método simples
+              <div className="flex items-center gap-2 sm:gap-3 text-green-300 font-bold text-sm sm:text-base md:text-lg">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Método simples
               </div>
-              <div className="flex items-center gap-3 text-green-300 font-bold">
-                <CheckCircle2 className="w-5 h-5" /> Rápido
+              <div className="flex items-center gap-2 sm:gap-3 text-green-300 font-bold text-sm sm:text-base md:text-lg">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Rápido
               </div>
-              <div className="flex items-center gap-3 text-green-300 font-bold">
-                <CheckCircle2 className="w-5 h-5" /> Direto ao ponto
+              <div className="flex items-center gap-2 sm:gap-3 text-green-300 font-bold text-sm sm:text-base md:text-lg">
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Direto ao ponto
               </div>
             </div>
           </div>
@@ -640,24 +640,36 @@ export default function App() {
       </Section>
 
       {/* FAQ */}
-      <Section className="bg-gray-50">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center">❓ Perguntas Frequentes</h2>
-        <div className="max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+      <Section className="bg-white border-t border-gray-100">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-black mb-4 tracking-tight text-brand-ink">Dúvidas Frequentes</h2>
+          <p className="text-gray-500 text-lg">Tudo o que você precisa saber para começar sua jornada de alívio.</p>
+        </div>
+        
+        <div className="max-w-3xl mx-auto space-y-4">
           <FAQItem 
-            question="Funciona mesmo?" 
-            answer="Sim! O método é baseado em exercícios de relaxamento e alongamento miofascial que são amplamente utilizados para alívio de DTM. A chave é a constância na aplicação diária." 
+            question="O Método Mandíbula Leve realmente funciona?" 
+            answer="Sim! O método foi desenvolvido com base em técnicas comprovadas de relaxamento muscular e liberação miofascial. Ele ataca a raiz da tensão acumulada nos músculos da mastigação. Milhares de alunos já relataram alívio significativo nos primeiros 7 dias de aplicação consistente." 
           />
           <FAQItem 
-            question="Preciso de algum equipamento especial?" 
-            answer="Não. Tudo o que você precisa é das suas mãos e alguns minutos do seu dia. Todos os exercícios podem ser feitos confortavelmente em casa." 
+            question="Como eu recebo o acesso ao conteúdo?" 
+            answer="O acesso é imediato! Assim que seu pagamento for confirmado (o que acontece em segundos no cartão ou Pix), você receberá um e-mail automático com seu login e senha para nossa plataforma exclusiva de membros." 
           />
           <FAQItem 
-            question="Quanto tempo preciso dedicar por dia?" 
-            answer="Menos de 5 minutos. O programa foi desenhado para ser rápido e direto ao ponto, perfeito para quem tem uma rotina corrida." 
+            question="Preciso comprar algum aparelho ou remédio?" 
+            answer="Absolutamente não. O método é 100% natural e focado em exercícios manuais e consciência corporal. Você só precisará das suas mãos e de 5 minutos do seu dia, sem gastos extras com placas ou medicamentos." 
           />
           <FAQItem 
-            question="Serve para qualquer pessoa?" 
-            answer="Sim, o método é seguro para a maioria das pessoas. No entanto, se você tiver condições graves, cirurgias recentes na face ou dor extrema, recomendamos consultar um profissional de saúde antes de iniciar." 
+            question="Por quanto tempo terei acesso ao método?" 
+            answer="O seu acesso é VITALÍCIO. Isso significa que você paga uma única vez e pode consultar o guia, as aulas e os áudios de relaxamento para sempre, sempre que sentir necessidade de um alívio rápido." 
+          />
+          <FAQItem 
+            question="E se eu não sentir melhora ou não gostar do conteúdo?" 
+            answer="Nós removemos todo o risco das suas costas. Você tem uma Garantia Incondicional de 7 dias. Se por qualquer motivo você achar que o método não é para você, basta nos enviar um e-mail e devolveremos 100% do seu dinheiro, sem perguntas." 
+          />
+          <FAQItem 
+            question="Tenho dores muito fortes, posso fazer os exercícios?" 
+            answer="Os exercícios são suaves e desenhados para relaxar, não para forçar. No entanto, se você estiver em um pós-operatório recente ou tiver uma condição clínica grave diagnosticada, recomendamos que mostre o guia ao seu dentista ou fisioterapeuta antes de iniciar." 
           />
         </div>
       </Section>
