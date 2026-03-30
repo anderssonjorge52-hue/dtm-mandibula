@@ -292,24 +292,24 @@ export default function App() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-2xl mx-auto">
             <div className="space-y-4">
               <div className="flex items-center gap-2 sm:gap-3 text-red-300 font-medium text-sm sm:text-base md:text-lg">
-                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Nada complicado
+                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Sem exercícios complexos
               </div>
               <div className="flex items-center gap-2 sm:gap-3 text-red-300 font-medium text-sm sm:text-base md:text-lg">
-                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Nada demorado
+                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Sem tratamentos caros
               </div>
               <div className="flex items-center gap-2 sm:gap-3 text-red-300 font-medium text-sm sm:text-base md:text-lg">
-                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Nada genérico
+                <XCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Sem teorias cansativas
               </div>
             </div>
             <div className="space-y-4">
               <div className="flex items-center gap-2 sm:gap-3 text-green-300 font-bold text-sm sm:text-base md:text-lg">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Método simples
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Passo a passo guiado
               </div>
               <div className="flex items-center gap-2 sm:gap-3 text-green-300 font-bold text-sm sm:text-base md:text-lg">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Rápido
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Alívio em até 7 dias
               </div>
               <div className="flex items-center gap-2 sm:gap-3 text-green-300 font-bold text-sm sm:text-base md:text-lg">
-                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> Direto ao ponto
+                <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" /> 100% Prático e direto
               </div>
             </div>
           </div>
@@ -329,12 +329,12 @@ export default function App() {
           >
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                "eBook completo",
-                "Acesso ao programa de 7 dias",
-                "Exercícios guiados",
-                "Sistema de progresso",
-                "Acesso imediato",
-                "Suporte exclusivo"
+                "Guia Digital Completo (PDF)",
+                "Cronograma de Alívio de 7 Dias",
+                "Vídeos e Instruções Passo a Passo",
+                "Rastreador de Evolução Diária",
+                "Entrega Instantânea no E-mail",
+                "Suporte Prioritário via WhatsApp"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
                   <CheckCircle2 className="w-5 h-5 text-brand-gold" />
